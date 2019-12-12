@@ -8,18 +8,10 @@ public class Professeur extends Personne {
 
 	private String matiere;
 
-	public Professeur() {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Professeur(String matiere) {
-		super();
-		this.matiere = matiere;
-	}
-
-	public Professeur(String nom, String prenom) {
+	public Professeur(String nom, String prenom, String matiere) {
 		super(nom, prenom);
 		// TODO Auto-generated constructor stub
+		this.matiere = matiere;
 	}
 
 	public String getMatiere() {

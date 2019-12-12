@@ -12,13 +12,10 @@ public class PersonneCompte implements Serializable {
 	private PersonneCompteId id;
 	private Date dateAffiliation;
 
-	public PersonneCompte() {
-		super();
-	}
-
-	public PersonneCompte(Date dateAffiliation) {
+	public PersonneCompte(PersonneCompteId id, Date dateAffiliation) {
 		super();
 		this.dateAffiliation = dateAffiliation;
+		this.id = id;
 	}
 
 	public Date getDateAffiliation() {
