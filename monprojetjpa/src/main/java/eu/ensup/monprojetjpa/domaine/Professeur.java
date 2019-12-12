@@ -8,6 +8,10 @@ public class Professeur extends Personne {
 
 	private String matiere;
 
+	public Professeur() {
+		super();
+	}
+
 	public Professeur(String nom, String prenom, String matiere) {
 		super(nom, prenom);
 		// TODO Auto-generated constructor stub

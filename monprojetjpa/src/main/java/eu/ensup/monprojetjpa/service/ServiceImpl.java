@@ -84,6 +84,12 @@ public class ServiceImpl implements IService {
 	}
 
 	@Override
+	public List<Adresse> findAdressesPersonnes() {
+		// TODO Auto-generated method stub
+		return dao.findAdressesPersonnes();
+	}
+
+	@Override
 	public List<Personne> findAll() {
 		// TODO Auto-generated method stub
 		return dao.findAll();
@@ -93,6 +99,18 @@ public class ServiceImpl implements IService {
 	public List<Adresse> findAllAdresses() {
 		// TODO Auto-generated method stub
 		return dao.findAllAdresses();
+	}
+
+	@Override
+	public List<Association> findAssociationsPersonnnes() {
+		// TODO Auto-generated method stub
+		return dao.findAssociationsPersonnnes();
+	}
+
+	@Override
+	public List<Personne> findbyMotClé(String keyword) {
+		// TODO Auto-generated method stub
+		return dao.findbyMotClé(keyword);
 	}
 
 	@Override

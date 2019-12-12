@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.persistence.Query;
 
 import eu.ensup.monprojetjpa.domaine.Adresse;
 import eu.ensup.monprojetjpa.domaine.Association;
@@ -253,15 +254,51 @@ public class DaoImpl implements IDao {
 	}
 
 	@Override
+	public List<Adresse> findAdressesPersonnes() {
+		// TODO Auto-generated method stub
+		emf = Persistence.createEntityManagerFactory("monprojetjpa");
+		em = emf.createEntityManager();
+		Query req = em.createQuery("select a from Adresse a join a.personnes");
+
+		return req.getResultList();
+	}
+
+	@Override
 	public List<Personne> findAll() {
 		// TODO Auto-generated method stub
-		return null;
+		emf = Persistence.createEntityManagerFactory("monprojetjpa");
+		em = emf.createEntityManager();
+		Query req = em.createQuery("select p from Personne p");
+		return req.getResultList();
 	}
 
 	@Override
 	public List<Adresse> findAllAdresses() {
 		// TODO Auto-generated method stub
-		return null;
+		emf = Persistence.createEntityManagerFactory("monprojetjpa");
+		em = emf.createEntityManager();
+		Query req = em.createQuery("select a from Adresse a");
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Association> findAssociationsPersonnnes() {
+		// TODO Auto-generated method stub
+		emf = Persistence.createEntityManagerFactory("monprojetjpa");
+		em = emf.createEntityManager();
+		Query req = em.createQuery("select assoc from Association assoc left join assoc.personnes");
+
+		return req.getResultList();
+	}
+
+	@Override
+	public List<Personne> findbyMotClé(String keyword) {
+		// TODO Auto-generated method stub
+		emf = Persistence.createEntityManagerFactory("monprojetjpa");
+		em = emf.createEntityManager();
+		Query req = em.createQuery("select p from Personne p where p.nom like :nom");
+		req.setParameter("nom", "%" + keyword + "%");
+		return req.getResultList();
 	}
 
 	@Override

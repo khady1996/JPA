@@ -1,8 +1,8 @@
 package eu.ensup.monprojetjpa.presentation;
 
-import java.util.Date;
+import java.util.List;
 
-import eu.ensup.monprojetjpa.domaine.Compte;
+import eu.ensup.monprojetjpa.domaine.Association;
 import eu.ensup.monprojetjpa.domaine.Personne;
 import eu.ensup.monprojetjpa.service.IService;
 import eu.ensup.monprojetjpa.service.ServiceImpl;
@@ -53,11 +53,31 @@ public class Lanceur {
 		 */
 
 		// Relation ManyToMany
-		Compte compte = new Compte("1245", new Date());
-		service.ajouterCompte(compte);
-		service.ajouterPersonneCompte(compte, pers2, new Date());
+
+		/*
+		 * Compte compte = new Compte("1245", new Date());
+		 * service.ajouterCompte(compte); service.ajouterPersonneCompte(compte, pers2,
+		 * new Date());
+		 */
 
 		// service.supprimerPersonne(1);
+
+//		System.out.println(service.findAll());
+//		System.out.println(service.findbyMotClé("ia"));
+		// System.out.println("Les adresses :");
+		/*
+		 * List<Adresse> listadress = service.findAdressesPersonnes(); for (Adresse
+		 * adresse : listadress) { System.out.println(adresse); for (Personne personne :
+		 * adresse.getPersonnes()) { System.out.println("\t" + personne); } }
+		 */
+		System.out.println("Les associations :");
+		List<Association> listassoc = service.findAssociationsPersonnnes();
+		for (Association assoc : listassoc) {
+			System.out.println(assoc);
+			for (Personne personne : assoc.getPersonnes()) {
+				System.out.println("\t" + personne);
+			}
+		}
 
 	}
 }

@@ -36,12 +36,25 @@ public class Association implements Serializable {
 		return nomAssociation;
 	}
 
+	public List<Personne> getPersonnes() {
+		return personnes;
+	}
+
 	public void setIdAssociation(int idAssociation) {
 		this.idAssociation = idAssociation;
 	}
 
 	public void setNomAssociation(String nomAssociation) {
 		this.nomAssociation = nomAssociation;
+	}
+
+	public void setPersonnes(List<Personne> personnes) {
+		this.personnes = personnes;
+	}
+
+	@Override
+	public String toString() {
+		return "Association [idAssociation=" + idAssociation + ", nomAssociation=" + nomAssociation + "]";
 	}
 
 }

@@ -86,7 +86,7 @@ public class Adresse {
 	@Override
 	public String toString() {
 		return "Adresse [idAdresse=" + idAdresse + ", numRue=" + numRue + ", nomRue=" + nomRue + ", codePostal="
-				+ codePostal + ", ville=" + ville + ", personnes=" + personnes + "]";
+				+ codePostal + ", ville=" + ville + "]";
 	}
 
 }

@@ -35,9 +35,15 @@ public interface IDao {
 
 	public int ajouterProfesseur(Professeur prof);
 
+	public List<Adresse> findAdressesPersonnes();
+
 	public List<Personne> findAll();
 
 	public List<Adresse> findAllAdresses();
+
+	public List<Association> findAssociationsPersonnnes();
+
+	public List<Personne> findbyMotClé(String keyword);
 
 	public Adresse getAdresse(int idAdresse);
 
